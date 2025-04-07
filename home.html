@@ -9,109 +9,120 @@
     body {
       font-family: 'Segoe UI', sans-serif;
     }
-    .sidebar {
-      height: 100vh;
-      overflow-y: auto;
-      background-color: #f8f9fa;
-      border-right: 1px solid #dee2e6;
-    }
-    .topbar {
-      background-color: #fff;
-      border-bottom: 1px solid #dee2e6;
-    }
-    .content {
-      padding: 1.5rem;
-    }
-    .sidebar .nav-link.active {
+    .sidebar-link.active {
       font-weight: bold;
-      color: #0d6efd !important;
+      color: #0d6efd;
+    }
+    .offcanvas-start {
+      width: 250px;
+    }
+    @media (min-width: 992px) {
+      .offcanvas-lg {
+        position: static;
+        transform: none;
+        visibility: visible !important;
+        background-color: #f8f9fa;
+        border-right: 1px solid #dee2e6;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="d-flex">
+<!-- Topbar -->
+<nav class="navbar navbar-light bg-light border-bottom">
+  <div class="container-fluid">
+    <button class="btn btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+      ☰ Menu
+    </button>
+    <span class="navbar-brand ms-2">Dokumentasi CMS Sikriuk</span>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
     <!-- Sidebar -->
-    <nav class="sidebar p-3">
-      <h5 class="mb-4">📘 Dokumentasi</h5>
+    <div class="offcanvas-lg offcanvas-start p-3" tabindex="-1" id="sidebar">
+      <h5 class="mb-4 d-none d-lg-block">📘 Dokumentasi</h5>
       <ul class="nav flex-column">
-        <li class="nav-item"><a href="#" class="nav-link">Pembukaan</a></li>
-        
-        <li class="nav-item mt-3"><strong>Page</strong></li>
-        <li class="nav-item ms-3"><a href="home.html" class="nav-link">Home</a></li>
-        <li class="nav-item ms-3"><a href="profile.html" class="nav-link">Profil</a></li>
-        <li class="nav-item ms-3"><a href="menumain.html" class="nav-link">Menu</a></li>
-        <li class="nav-item ms-3"><a href="kemitraanmain.html" class="nav-link">Kemitraan</a></li>
-        <li class="nav-item ms-3"><a href="blogmain.html" class="nav-link">Blog</a></li>
-        <li class="nav-item ms-3"><a href="lokasimain.html" class="nav-link">Lokasi</a></li>
-        
-        <li class="nav-item mt-3"><strong>Admin</strong></li>
-        <li class="nav-item ms-3"><a href="about.html" class="nav-link">About</a></li>
-        <li class="nav-item ms-3"><a href="promo.html" class="nav-link">Promo</a></li>
-        <li class="nav-item ms-3"><a href="menu.html" class="nav-link">Menu</a></li>
-        <li class="nav-item ms-3"><a href="pencapaian.html" class="nav-link">Pencapaian</a></li>
-        <li class="nav-item ms-3"><a href="testimoni.html" class="nav-link">Testimoni</a></li>
-        <li class="nav-item ms-3"><a href="faq.html" class="nav-link">FAQ</a></li>
+        <li class="nav-item"><a href="#" class="nav-link sidebar-link">Pembukaan</a></li>
 
-        <li class="nav-item ms-3"><a href="calonmitra.html" class="nav-link">Calon Mitra</a></li>
-        <li class="nav-item ms-3"><a href="gerobak.html" class="nav-link">Gerobak</a></li>
-        <li class="nav-item ms-3"><a href="step.html" class="nav-link">Step by Step</a></li>
-        <li class="nav-item ms-3"><a href="keunggulan.html" class="nav-link">Keunggulan Mitra</a></li>
-        <li class="nav-item ms-3"><a href="syarat.html" class="nav-link">Syarat Mitra</a></li>
-        <li class="nav-item ms-3"><a href="lokasim.html" class="nav-link">Lokasi Mitra</a></li>
-        <li class="nav-item ms-3"><a href="proposal.html" class="nav-link">Proposal Mitra</a></li>
+        <li class="nav-item mt-3 fw-bold">Page</li>
+        <li class="nav-item ms-3"><a href="home.html" class="nav-link sidebar-link">Home</a></li>
+        <li class="nav-item ms-3"><a href="profile.html" class="nav-link sidebar-link">Profil</a></li>
+        <li class="nav-item ms-3"><a href="menumain.html" class="nav-link sidebar-link">Menu</a></li>
+        <li class="nav-item ms-3"><a href="kemitraanmain.html" class="nav-link sidebar-link">Kemitraan</a></li>
+        <li class="nav-item ms-3"><a href="blogmain.html" class="nav-link sidebar-link">Blog</a></li>
+        <li class="nav-item ms-3"><a href="lokasimain.html" class="nav-link sidebar-link">Lokasi</a></li>
 
-        <li class="nav-item ms-3"><a href="blog.html" class="nav-link">Blog Sikriuk</a></li>
+        <li class="nav-item mt-3 fw-bold">Admin</li>
+        <li class="nav-item ms-3"><a href="about.html" class="nav-link sidebar-link">About</a></li>
+        <li class="nav-item ms-3"><a href="promo.html" class="nav-link sidebar-link">Promo</a></li>
+        <li class="nav-item ms-3"><a href="menu.html" class="nav-link sidebar-link">Menu</a></li>
+        <li class="nav-item ms-3"><a href="pencapaian.html" class="nav-link sidebar-link">Pencapaian</a></li>
+        <li class="nav-item ms-3"><a href="testimoni.html" class="nav-link sidebar-link">Testimoni</a></li>
+        <li class="nav-item ms-3"><a href="faq.html" class="nav-link sidebar-link">FAQ</a></li>
+        <li class="nav-item ms-3"><a href="calonmitra.html" class="nav-link sidebar-link">Calon Mitra</a></li>
+        <li class="nav-item ms-3"><a href="gerobak.html" class="nav-link sidebar-link">Gerobak</a></li>
+        <li class="nav-item ms-3"><a href="step.html" class="nav-link sidebar-link">Step by Step</a></li>
+        <li class="nav-item ms-3"><a href="keunggulan.html" class="nav-link sidebar-link">Keunggulan Mitra</a></li>
+        <li class="nav-item ms-3"><a href="syarat.html" class="nav-link sidebar-link">Syarat Mitra</a></li>
+        <li class="nav-item ms-3"><a href="lokasim.html" class="nav-link sidebar-link">Lokasi Mitra</a></li>
+        <li class="nav-item ms-3"><a href="proposal.html" class="nav-link sidebar-link">Proposal Mitra</a></li>
 
-        <li class="nav-item ms-3"><a href="security.html" class="nav-link">Access Token</a></li>
-
-        <li class="nav-item ms-3"><a href="userlist.html" class="nav-link">User List</a></li>
+        <li class="nav-item ms-3"><a href="blog.html" class="nav-link sidebar-link">Blog Sikriuk</a></li>
+        <li class="nav-item ms-3"><a href="security.html" class="nav-link sidebar-link">Access Token</a></li>
+        <li class="nav-item ms-3"><a href="userlist.html" class="nav-link sidebar-link">User List</a></li>
       </ul>
-    </nav>
+    </div>
 
-
-      <!-- Content -->
-        <div class="content">
-            <div class="container">
-                <h2 class="mb-4">Home page '/'</h2>
-                <p>Halaman ini adalah halaman utama dari website Sikriuk Fried Chicken.</p>
-                <p>Halaman ini adalah halaman yang pertama kali dilihat oleh pengunjung website.</p>
-                <p>di halaman ini berisikan:</p>
-                <ol>
-                    <li>Promo</li>
-                    <li>Deskripsi singkat perusahaan</li>
-                    <li>Deskripsi singkat perusahaan</li>
-                    <li>Jargon</li>
-                    <li>Menu Sikriuk Fried Chicken top 4</li>
-                    <li>Penawaran gabung mitra</li>
-                    <li>Faq tentang kemitraan</li>
-                    <li>Langkah langkah menjadi mitra</li>
-                    <li>Form pendaftaran mitra online</li>
-                    <li>Testimoni dari para mitra top</li>
-                    <li>List 3 blog terbaru</li>
-                    <li>Lokasi sikriuk FC</li>
-                    <li>Footer</li>
-                </ol>
-                Tampilan halaman ini adalah sebagai berikut:
-                <div class="row">
-                    <div class="col-md-12">
-                        <img src="asset/withpromo.png" class="img-thumbnail" alt="" srcset="">
-                        <p>jika ada promo</p>
-                    </div>
-                    <div class="col-md-8">
-                        <h3>Desktop</h3>
-                        <img src="asset/home.png" class="img-thumbnail" alt="" srcset="">
-                    </div>
-                    <div class="col-md-4">
-                        <h3>Mobile</h3>
-                        <img src="asset/homemobile.png" class="img-thumbnail" alt="" srcset="">
-                    </div>
+    <!-- Content -->
+    <main class="col-lg-9 ms-auto p-4">
+      <div class="content">
+        <div class="container">
+            <h2 class="mb-4">Home page '/'</h2>
+            <p>Halaman ini adalah halaman utama dari website Sikriuk Fried Chicken.</p>
+            <p>Halaman ini adalah halaman yang pertama kali dilihat oleh pengunjung website.</p>
+            <p>di halaman ini berisikan:</p>
+            <ol>
+                <li>Promo</li>
+                <li>Deskripsi singkat perusahaan</li>
+                <li>Deskripsi singkat perusahaan</li>
+                <li>Jargon</li>
+                <li>Menu Sikriuk Fried Chicken top 4</li>
+                <li>Penawaran gabung mitra</li>
+                <li>Faq tentang kemitraan</li>
+                <li>Langkah langkah menjadi mitra</li>
+                <li>Form pendaftaran mitra online</li>
+                <li>Testimoni dari para mitra top</li>
+                <li>List 3 blog terbaru</li>
+                <li>Lokasi sikriuk FC</li>
+                <li>Footer</li>
+            </ol>
+            Tampilan halaman ini adalah sebagai berikut:
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="asset/withpromo.png" class="img-thumbnail" alt="" srcset="">
+                    <p>jika ada promo</p>
+                </div>
+                <div class="col-md-8">
+                    <h3>Desktop</h3>
+                    <img src="asset/home.png" class="img-thumbnail" alt="" srcset="">
+                </div>
+                <div class="col-md-4">
+                    <h3>Mobile</h3>
+                    <img src="asset/homemobile.png" class="img-thumbnail" alt="" srcset="">
                 </div>
             </div>
         </div>
     </div>
+</div>
+    </main>
   </div>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
